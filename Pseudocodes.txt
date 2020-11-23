@@ -1,0 +1,58 @@
+
+Pseudocode for the Smartwatch
+
+This program will allow the user to seek for help from their emergency contact using functionalities that can send a message to their chosen contacts.
+
+User Registration Module
+Start register_user
+	Set first_name, last_name, email, phone_number, gender
+	if user_id exist then
+		Print("User exist)
+	else
+		Set emergency_contacts
+		if contact_id exist then
+			Set Save emergency contact
+		else
+			Print("Register contact to continue")
+	then
+		Set save user data
+End
+			
+
+
+Voice Prompt Module
+ 
+Start 
+	Get voice from Microphone
+	send speech to Google speech synthesizer
+	synthesizer converts the speech to text using the NLP
+	Extract lexems
+	create a arraylist of tokens
+	check each token against a dictionary of panic words
+	For each token in the list
+		if token is in the dictionary of panic words then,
+			Print("Initialize panic mode")
+		else
+			Print("Cancel")
+End
+
+Panic Mode Activation
+
+Start initialize-panic mode
+	input user_id, gps coordinate(long and lat), panic status
+	then, send message to contacts
+		input list of emergency_contacts
+		For contact_number in list of emergency_contacts
+			do send sms to each contact_number
+		end
+	if press panic cancel
+		Set panic_status to "cancelled"
+		For contact_number in list of emergency_contacts
+			do send sms to each contact_number
+		end
+	else if press panic done
+		Set panic_status to "done"
+		For contact_number in list of emergency_contacts
+			do send sms to each contact_number
+		end
+End 

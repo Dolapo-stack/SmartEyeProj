@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Emergency contacts</title>
+</head>
+<body>
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	  <ul class=flashes>
+	  {% for message in messages %}
+		<li>{{ message }}</li>
+	  {% endfor %}
+	  </ul>
+	{% endif %}
+  {% endwith %}
+  <nav>
+	  <a href="/">Home</a>
+  </nav>
+  {% if g.user.contacts %}
+  <div>
+	  <h3>Your emergency contacts</h3>
+	  <ul>
+	  {% for contact in g.user.contacts %}
+	  	<li>{{ contact.fullname }} | {{ contact.phone_no }} | {{ contact.email_address }}</li>
+	  {% endfor %}
+	</ul>
+  </div>
+  {%endif%}
+	<div>
+	<form action="/api/register_contact" method="post">
+		<h2>Add Emergency contacts</h2>
+		<hr>
+		<h5>Contact information</h5>
+		<label for="contact_name_1">Contact full name</label><br>
+		<input type="text" id="contact_name_1" name="contact_fullname" autofocus required="true"><br><br>
+		<label for="phone_no_1">Phone number (add country code e.g +44)</label><br>
+		<input type="text" id="phone_no_1" name="contact_phone_no" required="true"><br><br>
+		<label for="email">Email address</label><br>
+		<input type="email" id="email" name="contact_email" required="true"><br><br>
+		<button type="submit">Add contact</button>
+	</form>
+	</div>
+</body>
+</html>
+

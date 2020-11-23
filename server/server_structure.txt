@@ -1,0 +1,24 @@
+
+1. This project uses python programming language; 
+
+A. Server functionalities, authentication and messaging
+B. NLP libraries
+
+2. PostgreSQL
+3. Psycopg2 - a Python adapter for Postgres
+
+python3 or greater should be installed on your computer.
+
+# executing the project
+
+- cd to the root directory of this project
+- Then run these commands: 
+    ```pip install -r requirements.txt
+    virtual env
+    source env/bin/activate
+    python app.py```
+
+
+python manage.py db init
+python manage.py db migrate
+python manage.py db upgrade

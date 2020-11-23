@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>User Registration Page</title>
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		  <ul class=flashes>
+		  {% for message in messages %}
+			<li>{{ message }}</li>
+		  {% endfor %}
+		  </ul>
+		{% endif %}
+	  {% endwith %}
+	  <nav>
+		<a href="/">Home</a>
+	</nav>
+	<div>
+		<form action="/api/register" method="post">
+		<h2>Register Account</h2>
+		<hr>
+		<!-- text -->
+		<label for="firstname">First name</label><br>
+		<!-- input -->
+		<input type="text" id="firstname" name="firstname" autofocus><br><br>
+		<label for="lastname">Last name</label><br>
+		<!-- input -->
+		<input type="text" id="lastname" name="lastname"><br><br>
+		<label for="emailadd">Email</label><br> <!-- Span -->
+		<!-- input -->
+		<input type="Email" id="emailadd" name="email"><br><br>
+
+		<label for="phone_no">Phone number (add country code e.g +44)</label><br> 
+		<input type="text" id="phone_no" name="phone_no"><br><br>
+
+		<label for="gender">Gender</label><br>
+		<input type="radio" id="male" name="gender" value="M">
+  		<label for="male">Male</label><br>
+  		<input type="radio" id="female" name="gender" value="F">
+  		<label for="female">Female</label><br>
+		<!-- Span -->
+		<!--Dropdown -->
+		<br><br>
+		<label for="DOB">Date of Birth</label><br> <!-- Span -->
+		<!-- Input -->
+		<input type="Date" id="DOB" name="DOB"><br><br>
+		<label for="password">Password</label><br>
+		<input type="Password" id="password" name="password"><br><br>
+		<!-- Button "Submit" -->
+		<input type="submit" value="Submit"><br>
+		</form>
+	</div>
+	</body>
+</html>

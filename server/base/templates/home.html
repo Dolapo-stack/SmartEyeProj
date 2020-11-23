@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Break Free app</title>
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+		{% if messages %}
+		  <ul class=flashes>
+		  {% for message in messages %}
+			<li>{{ message }}</li>
+		  {% endfor %}
+		  </ul>
+		{% endif %}
+	  {% endwith %}
+	<div>
+		<h2>Welcome to Break Free app{{ ', '+g.user.firstname if g.user else '' }}</h2>
+		{% if not g.user %}
+		<a href="/register">Register new user</a><br/>
+		<a href="/login">Log in</a>
+		{% endif %}
+		{% if g.user %}
+		<a href="/add_contacts">Add emergency contacts</a><br/>
+		<a href="/logout">log out!</a>
+		{% endif %}
+		<p>Note: To login, go to the "Break Free app app" on your smartwatch and login with your phone number and password.</p>
+	</div>
+	</body>
+</html>

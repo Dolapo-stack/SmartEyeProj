@@ -1,0 +1,2 @@
+include ':smarteye'
+rootProject.name='SmartEye'

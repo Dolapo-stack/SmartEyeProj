@@ -1,0 +1,36 @@
+Description: A gadget that uses GSM, GPS, system to track potential rape victims.
+
+Technologies
+
+Server: 
+Python running on Flask framework
+PostgreSQL database
+SMS Gateway (Twilio API)
+
+Server Environment setup
+-----
+
+- VS Code to run the python codes
+
+- Android studio emulator
+
+- In VS code go to "Open" then navigate to repo directory and open it
+
+- After, go to menu and click "Terminal", then click "new terminal"
+
+- To start building, we need to have pip installed (pip is a python package manager, we need it because Flask framework is a python package and it comes with other tools like; virttualenv, Werkzeug server, jinja templates...).
+
+- Having install pip, we will run "pip install Flask"
+
+- Then run "virtualenv server", Virtual env is a virtual box that creates another container for installing python packages, rather thaan installing project dependicies on the general directory, we use it to install on specific project only: For example: A machine learning projeect uses: numpy, sci-learn.. But a normal app uses maybe just Flask and Auth0 packages.
+
+-----
+
+Client: Android App(Java)
+
+Tools:
+
+Git - For versioon control, we would commit code changes on git repo (university created)
+Postman API -> For initial testiing of APIs from Python server
+VS Code for Windows - Text editor and IDE
+Pg Admin - DBMS(Databasee Management System)
